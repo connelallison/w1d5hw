@@ -62,7 +62,7 @@ end
 
 def sell_pet_to_customer(shop, pet, customer)
   if shop[:pets].include?(pet)
-    if (customer_can_afford_pet(customer, pet) == true)
+    if (customer_can_afford_pet(customer, pet))
       add_pet_to_customer(customer, pet)
       remove_customer_cash(customer, pet[:price])
       add_or_remove_cash(shop, pet[:price])
